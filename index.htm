@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Video stream sample</title>
+    <style>
+    video {
+      width: 50%;
+      height: auto;
+    }
+    </style>
+    <script>
+        function myFunction() {
+          let videosource = document.getElementById("videosrc");
+          // console.log(x.split["/"])
+          videosource.setAttribute('src', 'http://localhost:3000/video/'+document.URL.toString().split("/")[document.URL.toString().split("/").length-1]);
+          let videoPlayer =  document.getElementById("videoPlayer");
+          videoPlayer.load();
+        }
+        </script>
+  </head>
+  <body onload="myFunction()">
+    <video id="videoPlayer" controls muted="muted"  width=window.innerWidth height=window.innerHeight autoplay controls> 
+      <source id = "videosrc"  type="video/mp4">
+    </video>
+  </body>
+</html>
